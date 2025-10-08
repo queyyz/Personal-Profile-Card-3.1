@@ -1,0 +1,310 @@
+/* ================= Theme Variables (Sakura Pink) ================= */
+:root {
+    --bg-gradient: linear-gradient(135deg, #f8b5d3 0%, #fddde6 100%);
+    --text-on-primary: #ffffff;
+    --primary: #f78fb3;
+    --chip-bg: rgba(255, 255, 255, 0.25);
+    --chip-bg-hover: rgba(255, 255, 255, 0.35);
+    --card-glow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+:root.dark {
+    --bg-gradient: linear-gradient(145deg, #2a1a2b 0%, #3a2236 100%);
+    --text-on-primary: #ffd6e8;
+    --primary: #f28fb3;
+    --chip-bg: rgba(255, 255, 255, 0.18);
+    --chip-bg-hover: rgba(255, 255, 255, 0.32);
+    --card-glow: 0 8px 28px rgba(0, 0, 0, 0.55);
+}
+
+/* ================= Profile Card ================= */
+.profile-card {
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 25px;
+    border-radius: 18px;
+    background: var(--bg-gradient);
+    color: var(--text-on-primary);
+    box-shadow: var(--card-glow);
+    font-family: 'Arial', sans-serif;
+    position: relative;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Header */
+.profile-header {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.profile-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin: 0 auto 15px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 48px;
+    color: var(--primary);
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    border: 3px solid rgba(255, 255, 255, 0.3);
+    animation: floatIn .6s ease both;
+}
+
+.profile-avatar.pulse {
+    animation: floatIn .6s ease both, pulseRing 2.2s ease-out 1s infinite;
+}
+
+.profile-name {
+    margin: 10px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.student-id {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px 15px;
+    border-radius: 20px;
+    display: inline-block;
+    font-size: 14px;
+}
+
+.profile-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.info-item {
+    background: var(--chip-bg);
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.info-label {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-value {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Profile Sections */
+.profile-section {
+    margin: 20px 0;
+}
+
+.profile-section h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Add Sakura Emoji to Section Titles */
+.profile-section h3::before {
+    content: "🌸";
+}
+
+/* Hobbies */
+.hobbies-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.hobby-item {
+    background: var(--chip-bg);
+    padding: 6px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+/* Sakura emoji on hobby */
+.hobby-item::before {
+    content: "🌸";
+    margin-right: 4px;
+}
+
+.hobby-item:hover {
+    background: var(--chip-bg-hover);
+    transform: translateY(-2px);
+}
+
+/* Skills */
+.skills {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+}
+
+.skill-tag {
+    background: var(--chip-bg);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.skill-tag:hover {
+    background: var(--chip-bg-hover);
+    transform: scale(1.05);
+}
+
+/* Contact Button */
+.contact-button {
+    width: 100%;
+    padding: 12px;
+    background: #fff0f5;
+    color: var(--primary);
+    border: none;
+    border-radius: 25px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.contact-button:hover {
+    background: #ffe6f0;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Theme Toggle */
+.theme-toggle {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    border: none;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    background: #fff0f5;
+    color: var(--primary);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+    transition: all .2s ease;
+}
+
+.theme-toggle:hover {
+    background: #ffe6f0;
+    transform: translateY(-2px);
+}
+
+/* Social Media Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 14px;
+}
+
+.social-links a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    background: var(--chip-bg);
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all .2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.social-links a:hover {
+    background: var(--chip-bg-hover);
+    transform: translateY(-2px) scale(1.08);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.35);
+}
+
+/* Achievement Badges */
+.badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: .2px;
+    background: var(--chip-bg);
+    color: var(--text-on-primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    transition: background .25s ease;
+}
+
+.badge::before {
+    content: "🌸";
+    margin-right: 6px;
+}
+
+.badge:hover {
+    background: var(--chip-bg-hover);
+}
+
+/* Badge variants */
+.badge.gold {
+    background: linear-gradient(90deg, #ffd6e8, #f8a1c2);
+    color: #4a1a3c;
+}
+
+.badge.silver {
+    background: linear-gradient(90deg, #f7c6d7, #eab5cc);
+    color: #3c1a2e;
+}
+
+.badge.bronze {
+    background: linear-gradient(90deg, #f5a6c2, #fbb7d4);
+    color: #4a1a2b;
+}
+
+/* Animations */
+@keyframes floatIn {
+    from { opacity: 0; transform: translateY(8px) scale(.98);}
+    to   { opacity: 1; transform: translateY(0) scale(1);}
+}
+
+@keyframes pulseRing {
+    0% { box-shadow: 0 0 0 0 rgba(255,255,255,.45);}
+    70% { box-shadow: 0 0 0 12px rgba(255,255,255,0);}
+    100% { box-shadow: 0 0 0 0 rgba(255,255,255,0);}
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .profile-card { margin: 10px; padding: 20px;}
+    .profile-info { grid-template-columns: 1fr; }
+    .skills { grid-template-columns: 1fr 1fr; }
+}
